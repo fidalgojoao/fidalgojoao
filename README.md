@@ -51,7 +51,7 @@ Description of the project.
 
 ## 🤝 Contact
 
-All my Links: https://linktr.ee/jonaschild
+All my Links: https://linktr.ee/joao.fidalgo
 
 <!--
 **JoaoFidalgo/JoaoFidalgo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
