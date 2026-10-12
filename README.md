@@ -6,6 +6,8 @@ Software Developer (in the making) based in Portugal, focused on learning C++ ri
 
 Updated: Sep 2026
 
+Before we get started, you can call me Johnny! 😁
+
 I start learning C++ in Codecademy in August 2026, and my goal is to learn so much, to the point where I can build AAA games, Operating Systems and emulators from scratch. I currently rely a lot on AI right now to help me write code and understand it. Another one of my passions is also Android Custom ROMs. Once I feel comfortable with C++, I will start to learn Kotlin, to try and build ROMs. For now, I just rely on AI to help me get a head start.
 
 Before starting my transition into software development, I worked as a WFM Real Time Analyst, where I helped manage in REAL TIME, the workforce of a project of nearly 600 employees. I've also built data reports with Microsoft Excel to showcase KPIs to Operations Supervisors, so they could know which points to focus. All of this for our simple goal: to maximize the money on the table.
