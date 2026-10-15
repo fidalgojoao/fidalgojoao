@@ -40,7 +40,7 @@ During this time, to complete all of the tasks previously mentioned, I relied he
 
 ## 🚀 Projects
 
-### Title
+### Truth or Dare - Android App
 Description of the project.
 - task 1
 - task 2
