@@ -20,7 +20,7 @@ This information is used only to provide the app's features and allow a game to 
 
 Truth or Dare does not sell personal information. The developer does not use advertising or analytics SDKs and does not operate a server that collects gameplay information.
 
-The app does not request access to your location, contacts, camera, microphone, or Bluetooth. Its Android manifest explicitly removes legacy and modern Nearby-device permissions, including Bluetooth scanning, connecting, advertising, nearby Wi-Fi devices, and ultra-wideband ranging.
+The app does not request access to your location, contacts, camera, microphone, nearby devices, or Bluetooth.
 
 ## Google Play Billing
 
