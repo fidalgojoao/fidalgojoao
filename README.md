@@ -41,9 +41,10 @@ During this time, to complete all of the tasks previously mentioned, I relied he
 ## 🚀 Projects
 
 ### Truth or Dare - Android App
-Description of the project.
-- task 1
-- task 2
+An offline party game app
+- feature 1
+- feature 2
+- Link: https://play.google.com/store/apps/details?id=game.truthordare
 
 ## 📈 Currently Learning
 
