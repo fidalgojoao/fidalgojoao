@@ -58,4 +58,3 @@ if (!reducedMotion.matches && window.matchMedia("(pointer: fine)").matches) {
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
-
