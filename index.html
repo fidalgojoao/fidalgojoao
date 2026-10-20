@@ -10,21 +10,15 @@
     <meta name="theme-color" content="#09090b" />
     <meta name="google-site-verification" content="jlW7F2nG0PA_6Goma5nMSGPetw8M0CzWUiENeQ98ETY" />
     <title>João Fidalgo</title>
-    <link rel="icon" type="image/jpeg" href="website/assets/profile-bw.jpg" />
-    <link rel="apple-touch-icon" href="website/assets/profile-bw.jpg" />
+    <link rel="icon" type="image/png" href="website/assets/favicon-rounded.png" />
+    <link rel="apple-touch-icon" href="website/assets/favicon-rounded.png" />
     <link rel="stylesheet" href="website/styles.css" />
     <script>
       (() => {
-        let savedTheme = null;
-        try {
-          savedTheme = localStorage.getItem("theme");
-        } catch (_) {
-          // The system preference remains a safe fallback when storage is unavailable.
-        }
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches
           ? "light"
           : "dark";
-        document.documentElement.dataset.theme = savedTheme || systemTheme;
+        document.documentElement.dataset.theme = systemTheme;
       })();
     </script>
   </head>

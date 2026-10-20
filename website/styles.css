@@ -334,11 +334,15 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
     max-width: none;
     transform: none;
     grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand toggle"
+      "nav nav";
     gap: .55rem;
     padding: .65rem;
   }
+  .brand { grid-area: brand; }
   .desktop-nav {
-    grid-column: 1 / -1;
+    grid-area: nav;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
@@ -349,8 +353,8 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   .desktop-nav a { min-width: 0; padding: .48rem .1rem; font-size: .69rem; text-align: center; }
   .brand-name { overflow: hidden; font-size: .88rem; text-overflow: ellipsis; white-space: nowrap; }
   .brand-photo { width: 2.35rem; height: 2.35rem; border-radius: .72rem; }
-  .theme-toggle { width: 2.55rem; height: 2.55rem; }
-  .hero { padding-top: 10.5rem; gap: 1.5rem; }
+  .theme-toggle { grid-area: toggle; width: 2.55rem; height: 2.55rem; }
+  .hero { padding-top: 8.5rem; gap: 1.5rem; }
   .hero h1 { font-size: clamp(3.05rem, 15vw, 4.8rem); }
   .hero-actions .button { flex: 1 1 10rem; }
   .hero-visual { min-height: 37rem; }

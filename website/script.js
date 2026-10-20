@@ -1,23 +1,27 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
+let themeWasManuallyChanged = false;
 
 function applyTheme(theme) {
   root.dataset.theme = theme;
-  try {
-    localStorage.setItem("theme", theme);
-  } catch (_) {
-    // Theme switching still works when a browser blocks local storage.
-  }
   const isDark = theme === "dark";
   themeToggle.setAttribute("aria-label", `Switch to ${isDark ? "light" : "dark"} mode`);
   themeColor.setAttribute("content", isDark ? "#09090b" : "#f7f7fb");
 }
 
-applyTheme(root.dataset.theme || "dark");
+applyTheme(systemTheme.matches ? "light" : "dark");
 
 themeToggle.addEventListener("click", () => {
+  themeWasManuallyChanged = true;
   applyTheme(root.dataset.theme === "dark" ? "light" : "dark");
+});
+
+systemTheme.addEventListener("change", (event) => {
+  if (!themeWasManuallyChanged) {
+    applyTheme(event.matches ? "light" : "dark");
+  }
 });
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
