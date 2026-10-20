@@ -1,10 +1,318 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My GitHub Website</title>
-</head>
-<body>
-    <h1>Hello, world!</h1>
-    <p>My website is officially live on GitHub Pages.</p>
-</body>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="João Fidalgo — software developer in the making, learning C++ and building useful things."
+    />
+    <meta name="theme-color" content="#09090b" />
+    <title>João Fidalgo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%238b5cf6'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-size='51' font-family='Arial' font-weight='700' fill='white'%3EJF%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (() => {
+        let savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem("theme");
+        } catch (_) {
+          // The system preference remains a safe fallback when storage is unavailable.
+        }
+        const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "dark";
+        document.documentElement.dataset.theme = savedTheme || systemTheme;
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="João Fidalgo — home">
+        <span class="brand-mark">JF</span>
+        <span class="brand-name">João Fidalgo</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#stack">Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#links">Links</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Change theme">
+        <span class="sun" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
+        <span class="moon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        </span>
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> Portugal · Learning in public</div>
+          <h1>
+            Hi, I’m João.<br />
+            <span class="gradient-text">I turn curiosity into code.</span>
+          </h1>
+          <p class="hero-lead">
+            Software Developer <em>(in the making)</em> based in Portugal, focused on learning
+            <strong>C++</strong> right now.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">
+              Explore my work
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="button secondary" href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">
+              GitHub profile
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Developer profile card">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="profile-card">
+            <div class="profile-card-top">
+              <div class="status-dot"></div>
+              <span>currently_learning.cpp</span>
+              <div class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="avatar-wrap">
+              <img src="https://avatars.githubusercontent.com/u/38955390?v=4" alt="João Fidalgo" />
+              <span class="avatar-ring" aria-hidden="true"></span>
+            </div>
+            <p class="code-line"><span>const</span> developer = {</p>
+            <p class="code-line indent">name: <strong>"Johnny"</strong>,</p>
+            <p class="code-line indent">focus: <strong>"C++"</strong>,</p>
+            <p class="code-line indent">mode: <strong>"learning"</strong></p>
+            <p class="code-line">};<span class="caret"></span></p>
+          </div>
+          <div class="floating-tag tag-one">C++</div>
+          <div class="floating-tag tag-two">Automate</div>
+          <div class="floating-tag tag-three">Build</div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="section-heading reveal">
+          <span class="section-number">01</span>
+          <div>
+            <p class="kicker">About me</p>
+            <h2>From real-time operations<br />to real-world software.</h2>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p class="intro">Before we get started, you can call me <strong>Johnny!</strong> 😁</p>
+            <p>
+              I started learning C++ in Codecademy in August 2026. My goal is to learn enough to
+              build AAA games, operating systems and emulators from scratch. I currently rely a lot
+              on AI to help me write code and understand it.
+            </p>
+            <p>
+              Another one of my passions is Android Custom ROMs. Once I feel comfortable with C++,
+              I’ll start learning Kotlin and try to build ROMs. For now, I use AI to help me get a
+              head start.
+            </p>
+            <p>
+              Before transitioning into software development, I worked as a WFM Real Time Analyst,
+              helping manage the workforce of a project with nearly 600 employees. I also built
+              Microsoft Excel reports that showed operational KPIs and helped supervisors focus on
+              the points that mattered most.
+            </p>
+            <p>
+              I used Excel formulas, Power Query and Microsoft Power Automate to automate as much
+              work as possible — turning tasks that took hours of manual effort into minutes.
+            </p>
+            <p class="updated">Profile updated September 2026</p>
+          </div>
+
+          <div class="impact-panel reveal">
+            <div class="impact-card accent-card">
+              <span class="impact-value">600</span>
+              <span class="impact-label">employees supported<br />in real time</span>
+            </div>
+            <div class="impact-card">
+              <span class="impact-value">hrs → min</span>
+              <span class="impact-label">manual work reduced<br />through automation</span>
+            </div>
+            <div class="quote-card">
+              <span class="quote-mark">“</span>
+              <p>Learn deeply.<br />Build boldly.<br />Keep improving.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section stack-section" id="stack">
+        <div class="section-heading reveal">
+          <span class="section-number">02</span>
+          <div>
+            <p class="kicker">Tech stack</p>
+            <h2>What I know — and<br />what I’m learning next.</h2>
+          </div>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <div class="stack-icon">{ }</div>
+            <p class="stack-label">Backend</p>
+            <h3>Building foundations</h3>
+            <ul class="skill-list">
+              <li><span>C++</span><small class="active">Beginner · In progress</small></li>
+              <li><span>Kotlin</span><small>Planned</small></li>
+              <li><span>Java</span><small>Planned</small></li>
+              <li><span>Python</span><small>Planned</small></li>
+              <li><span>Rust</span><small>Planned</small></li>
+            </ul>
+          </article>
+
+          <article class="stack-card reveal">
+            <div class="stack-icon">&lt;/&gt;</div>
+            <p class="stack-label">Frontend & data</p>
+            <h3>Making ideas visible</h3>
+            <ul class="skill-list">
+              <li><span>HTML</span><small>Beginner · Planned</small></li>
+              <li><span>CSS</span><small>Beginner · Planned</small></li>
+              <li><span>PHP</span><small>Planned</small></li>
+              <li><span>MySQL</span><small>Planned</small></li>
+            </ul>
+          </article>
+
+          <article class="stack-card reveal featured-stack">
+            <div class="stack-icon">↗</div>
+            <p class="stack-label">Tools & practices</p>
+            <h3>Where experience meets code</h3>
+            <ul class="skill-list">
+              <li><span>Microsoft Excel</span><small class="advanced">Advanced</small></li>
+              <li><span>Power Automate</span><small class="intermediate">Intermediate</small></li>
+              <li><span>Visual Studio</span><small>Beginner</small></li>
+              <li><span>Power BI</span><small>Beginner</small></li>
+              <li><span>Object-Oriented Programming</span><small>Beginner</small></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section project-section" id="projects">
+        <div class="section-heading reveal">
+          <span class="section-number">03</span>
+          <div>
+            <p class="kicker">Featured project</p>
+            <h2>Ideas are better<br />when people can use them.</h2>
+          </div>
+        </div>
+
+        <article class="project-card reveal">
+          <div class="project-copy">
+            <div class="project-badge"><span></span> Android app</div>
+            <h3>Truth or Dare</h3>
+            <p class="project-description">An offline party game app, designed to keep the fun going wherever you are.</p>
+            <ul class="project-features" aria-label="README feature placeholders">
+              <li>Feature 1</li>
+              <li>Feature 2</li>
+            </ul>
+            <div class="project-actions">
+              <a class="button primary" href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">
+                View on Google Play
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+              </a>
+              <a class="text-link" href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">View GitHub <span>↗</span></a>
+            </div>
+          </div>
+          <div class="project-art" aria-hidden="true">
+            <div class="phone">
+              <div class="phone-speaker"></div>
+              <div class="app-screen">
+                <span class="mini-label">TRUTH OR DARE</span>
+                <div class="game-orb">?</div>
+                <p>Ready to play?</p>
+                <div class="game-buttons"><i>TRUTH</i><i>DARE</i></div>
+              </div>
+            </div>
+            <div class="shape shape-a"></div>
+            <div class="shape shape-b"></div>
+            <div class="shape shape-c"></div>
+          </div>
+        </article>
+
+        <div class="learning-strip reveal">
+          <div>
+            <p class="kicker">Currently learning</p>
+            <h3>C++</h3>
+          </div>
+          <div class="progress-track" aria-label="Learning journey in progress">
+            <span></span>
+          </div>
+          <p>One concept at a time.<br />One project at a time.</p>
+        </div>
+      </section>
+
+      <section class="section links-section" id="links">
+        <div class="section-heading reveal">
+          <span class="section-number">04</span>
+          <div>
+            <p class="kicker">Find me online</p>
+            <h2>Let’s connect<br />around the web.</h2>
+          </div>
+        </div>
+
+        <div class="links-grid">
+          <a class="social-link spotify reveal" href="https://open.spotify.com/user/7u4cq5x7p428c4udt9wg0awwo?si=384454f782e24566" target="_blank" rel="noreferrer">
+            <span class="social-icon">♫</span><span><strong>Spotify</strong><small>What I’m listening to</small></span><i>↗</i>
+          </a>
+          <a class="social-link github reveal" href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">
+            <span class="social-icon">GH</span><span><strong>GitHub</strong><small>Projects & experiments</small></span><i>↗</i>
+          </a>
+          <a class="social-link instagram reveal" href="https://instagram.com/joaochild" target="_blank" rel="noreferrer">
+            <span class="social-icon">IG</span><span><strong>Instagram</strong><small>@joaochild</small></span><i>↗</i>
+          </a>
+          <a class="social-link facebook reveal" href="https://facebook.com/joaochiId/" target="_blank" rel="noreferrer">
+            <span class="social-icon">f</span><span><strong>Facebook</strong><small>Follow along</small></span><i>↗</i>
+          </a>
+          <a class="social-link youtube reveal" href="https://youtube.com/@jonaschild?sub_confirmation=1" target="_blank" rel="noreferrer">
+            <span class="social-icon">▶</span><span><strong>YouTube</strong><small>@jonaschild</small></span><i>↗</i>
+          </a>
+          <a class="social-link linkedin reveal" href="https://linkedin.com/in/joaofidalgo1998" target="_blank" rel="noreferrer">
+            <span class="social-icon">in</span><span><strong>LinkedIn</strong><small>Professional profile</small></span><i>↗</i>
+          </a>
+          <a class="social-link playstore reveal wide" href="https://play.google.com/apps/testing/game.truthordare" target="_blank" rel="noreferrer">
+            <span class="social-icon">▶</span><span><strong>Truth or Dare — Android App</strong><small>Join the alpha test on Google Play</small></span><i>↗</i>
+          </a>
+        </div>
+      </section>
+
+      <section class="closing-section">
+        <div class="closing-card reveal">
+          <p class="kicker">Say hello</p>
+          <h2>Have an idea?<br /><span class="gradient-text">Let’s talk.</span></h2>
+          <p>Follow the journey, explore my code, or connect with me through any of the links above.</p>
+          <a class="button primary" href="https://linktr.ee/joao.fidalgo" target="_blank" rel="noreferrer">Open my Linktree <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark">JF</span><span class="brand-name">João Fidalgo</span></a>
+      <p>Learning, building, improving.</p>
+      <p>© <span id="year"></span> João Fidalgo</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
+
