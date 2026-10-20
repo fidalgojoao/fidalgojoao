@@ -285,7 +285,9 @@ main, footer { width: min(calc(100% - 2.25rem), 1180px); max-width: 100%; margin
 .github { --brand-color: var(--text); }
 .instagram { --brand-color: #e1306c; }
 .facebook { --brand-color: #0866ff; }
-.youtube { --brand-color: #ff0000; }
+.discord { --brand-color: #5865f2; }
+.discord .social-icon { background: #5865f2; }
+.discord .social-icon img { width: 1.85rem; }
 .linkedin { --brand-color: #0a66c2; }
 .playstore { --brand-color: #4285f4; }
 .github .social-icon img { filter: invert(1); }
@@ -313,6 +315,21 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
 @keyframes blink { 50% { opacity: 0; } }
 @keyframes gradient-shift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes progress-glow { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.35); } }
+
+@media (min-width: 901px) {
+  .site-header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: none;
+    padding-inline: max(2rem, calc((100vw - 1680px) / 2));
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+  main, footer { width: min(calc(100% - 4rem), 1680px); }
+  .hero { padding-top: 8rem; }
+}
 
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; padding-top: 10rem; }
