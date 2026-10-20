@@ -318,14 +318,7 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
 
 @media (min-width: 901px) {
   .site-header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    transform: none;
-    padding-inline: max(2rem, calc((100vw - 1680px) / 2));
-    border-right: 0;
-    border-left: 0;
-    border-radius: 0;
+    width: min(calc(100% - 4rem), 1680px);
   }
   main, footer { width: min(calc(100% - 4rem), 1680px); }
   .hero { padding-top: 8rem; }
