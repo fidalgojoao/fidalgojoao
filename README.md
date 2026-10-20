@@ -46,6 +46,12 @@ An offline party game app
 - feature 2
 - Link: https://play.google.com/store/apps/details?id=game.truthordare
 
+### Never Have I Ever - Android App
+A party game built around classic Never Have I Ever prompts
+- Party game
+- Android
+- Link: https://play.google.com/apps/testing/game.neverhaveiever
+
 ## 📈 Currently Learning
 
 - C++
