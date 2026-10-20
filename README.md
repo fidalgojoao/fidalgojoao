@@ -41,16 +41,18 @@ During this time, to complete all of the tasks previously mentioned, I relied he
 ## 🚀 Projects
 
 ### Truth or Dare - Android App
-An offline party game app
-- feature 1
-- feature 2
+A customizable offline party game designed for fun, privacy, and inclusive group play.
+
+- Multiple game levels, personalized player preferences, custom cards, and multilingual support
+- Works offline and stores all gameplay data locally on the device
 - Link: https://play.google.com/store/apps/details?id=game.truthordare
 
 ### Never Have I Ever - Android App
-A party game built around classic Never Have I Ever prompts
-- Party game
-- Android
-- Link: https://play.google.com/apps/testing/game.neverhaveiever
+An offline party game for sharing stories, revealing secrets, and discovering more about your friends.
+
+- Multiple game levels, personalized player preferences, custom cards, and multilingual support
+- Works offline and stores all gameplay data locally on the device
+- Link: https://play.google.com/store/apps/details?id=game.neverhaveiever
 
 ## 📈 Currently Learning
 
