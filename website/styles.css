@@ -274,19 +274,22 @@ main, footer { width: min(calc(100% - 2.25rem), 1180px); max-width: 100%; margin
 .links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; padding-left: 5rem; }
 .social-link { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; min-height: 6.5rem; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface); transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease; }
 .social-link:hover { transform: translateY(-4px); border-color: var(--brand-color, var(--purple)); box-shadow: 0 15px 35px color-mix(in srgb, var(--brand-color, var(--purple)) 12%, transparent); }
-.social-icon { display: grid; width: 3rem; height: 3rem; place-items: center; border-radius: .9rem; background: color-mix(in srgb, var(--brand-color, var(--purple)) 15%, var(--surface-strong)); color: var(--brand-color, var(--purple)); font-weight: 850; font-size: .78rem; }
+.social-icon { display: grid; width: 3rem; height: 3rem; place-items: center; border-radius: .9rem; background: color-mix(in srgb, var(--brand-color, var(--purple)) 12%, var(--surface-strong)); }
+.social-icon img { display: block; width: 1.7rem; height: 1.7rem; object-fit: contain; }
 .social-link strong, .social-link small { display: block; }
 .social-link strong { font-size: .94rem; }
 .social-link small { margin-top: .1rem; color: var(--muted); font-size: .72rem; }
 .social-link > i { color: var(--muted); font-style: normal; font-size: 1.2rem; transition: transform 180ms ease; }
 .social-link:hover > i { transform: translate(3px, -3px); }
-.spotify { --brand-color: #25d865; }
+.spotify { --brand-color: #1ed760; }
 .github { --brand-color: var(--text); }
-.instagram { --brand-color: #e85b9c; }
-.facebook { --brand-color: #5b8def; }
-.youtube { --brand-color: #ff4f58; }
-.linkedin { --brand-color: #3f9bea; }
-.playstore { --brand-color: #64d7bf; }
+.instagram { --brand-color: #e1306c; }
+.facebook { --brand-color: #0866ff; }
+.youtube { --brand-color: #ff0000; }
+.linkedin { --brand-color: #0a66c2; }
+.playstore { --brand-color: #4285f4; }
+.github .social-icon img { filter: invert(1); }
+[data-theme="light"] .github .social-icon img { filter: none; }
 .social-link.wide { grid-column: 1 / -1; }
 
 .closing-section { padding: 5rem 0 8rem; }
