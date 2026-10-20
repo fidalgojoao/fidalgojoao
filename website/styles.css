@@ -242,6 +242,7 @@ main, footer { width: min(calc(100% - 2.25rem), 1180px); max-width: 100%; margin
 .featured-stack { background: linear-gradient(160deg, color-mix(in srgb, var(--surface) 88%, var(--purple) 12%), var(--surface)); }
 
 .project-card { display: grid; grid-template-columns: 1fr 1fr; min-height: 35rem; overflow: hidden; border: 1px solid var(--line); border-radius: 1.7rem; background: var(--surface); box-shadow: var(--shadow); }
+.project-card + .project-card { margin-top: 1rem; }
 .project-copy { padding: clamp(2rem, 5vw, 4.5rem); align-self: center; }
 .project-badge { display: flex; align-items: center; gap: .65rem; color: var(--muted); font: 700 .68rem ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .12em; }
 .project-copy h3 { margin: 1rem 0; font-size: clamp(3rem, 6vw, 5.4rem); line-height: .95; letter-spacing: -.065em; }
@@ -264,6 +265,11 @@ main, footer { width: min(calc(100% - 2.25rem), 1180px); max-width: 100%; margin
 .shape-a { width: 26rem; height: 26rem; }
 .shape-b { width: 19rem; height: 19rem; border-style: dashed; animation: spin 20s linear infinite; }
 .shape-c { width: 6rem; height: 6rem; right: 8%; top: 9%; background: rgba(94,234,212,.14); backdrop-filter: blur(10px); }
+.never-have-i-ever .project-art { background: radial-gradient(circle at 50% 40%, #ff9ec7 0, #d94e8f 34%, #38152d 100%); }
+.never-have-i-ever .mini-label { color: #ffc0dc; }
+.never-have-i-ever .game-orb { background: radial-gradient(circle at 35% 30%, #ffd0e4, #e05080 58%, #7b2149); box-shadow: 0 0 50px rgba(224,80,128,.55); }
+.never-have-i-ever .game-buttons i { background: #e05080; }
+.never-have-i-ever .game-buttons i:last-child { background: #7c3aed; }
 .learning-strip { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2rem; margin-top: 1rem; padding: 1.5rem 1.7rem; border: 1px solid var(--line); border-radius: 1.25rem; background: var(--surface); }
 .learning-strip .kicker { margin-bottom: .3rem; }
 .learning-strip h3 { margin: 0; font-size: 2rem; letter-spacing: -.05em; }
@@ -284,14 +290,13 @@ main, footer { width: min(calc(100% - 2.25rem), 1180px); max-width: 100%; margin
 .spotify { --brand-color: #1ed760; }
 .github { --brand-color: var(--text); }
 .instagram { --brand-color: #e1306c; }
-.facebook { --brand-color: #0866ff; }
 .discord { --brand-color: #5865f2; }
-.discord .social-icon { background: #5865f2; }
 .discord .social-icon img { width: 1.85rem; }
 .linkedin { --brand-color: #0a66c2; }
 .playstore { --brand-color: #4285f4; }
 .github .social-icon img { filter: invert(1); }
 [data-theme="light"] .github .social-icon img { filter: none; }
+[data-theme="light"] .discord .social-icon img { filter: invert(1); }
 .social-link.wide { grid-column: 1 / -1; }
 
 .closing-section { padding: 5rem 0 8rem; }
