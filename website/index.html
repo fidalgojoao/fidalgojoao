@@ -12,7 +12,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261021-1" />
+    <link rel="stylesheet" href="styles.css?v=20261021-2" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches
@@ -41,14 +41,28 @@
         <a href="#links">Links</a>
       </nav>
 
-      <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Change theme">
-        <span class="sun" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-        </span>
-        <span class="moon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
-        </span>
-      </button>
+      <div class="header-actions">
+        <button class="spotify-toggle" type="button" aria-label="Open Spotify player" aria-expanded="false" aria-controls="spotify-player" title="Play Instant Crush">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+        </button>
+
+        <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Change theme">
+          <span class="sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </span>
+          <span class="moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+          </span>
+        </button>
+      </div>
+
+      <div class="spotify-popover" id="spotify-player" hidden>
+        <div class="spotify-popover-heading">
+          <span><i aria-hidden="true"></i> Now playing</span>
+          <button class="spotify-close" type="button" aria-label="Close Spotify player">×</button>
+        </div>
+        <iframe data-testid="embed-iframe" title="Instant Crush by Daft Punk featuring Julian Casablancas on Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/track/2cGxRwrMyEAp8dEbuZaVv6?utm_source=generator&theme=0&si=af6c673476194188" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </header>
 
     <main id="main-content">
@@ -341,7 +355,7 @@
       <p>© <span id="year"></span> João Fidalgo</p>
     </footer>
 
-    <script src="script.js?v=20261021-1"></script>
+    <script src="script.js?v=20261021-2"></script>
   </body>
 </html>
 

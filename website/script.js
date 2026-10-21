@@ -1,6 +1,9 @@
 const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
 const themeColor = document.querySelector('meta[name="theme-color"]');
+const spotifyToggle = document.querySelector(".spotify-toggle");
+const spotifyPlayer = document.querySelector(".spotify-popover");
+const spotifyClose = document.querySelector(".spotify-close");
 const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
 let themeWasManuallyChanged = false;
 
@@ -21,6 +24,34 @@ themeToggle.addEventListener("click", () => {
 systemTheme.addEventListener("change", (event) => {
   if (!themeWasManuallyChanged) {
     applyTheme(event.matches ? "light" : "dark");
+  }
+});
+
+function setSpotifyPlayer(open) {
+  spotifyPlayer.hidden = !open;
+  spotifyToggle.setAttribute("aria-expanded", String(open));
+  spotifyToggle.setAttribute("aria-label", `${open ? "Close" : "Open"} Spotify player`);
+}
+
+spotifyToggle.addEventListener("click", () => {
+  setSpotifyPlayer(spotifyPlayer.hidden);
+});
+
+spotifyClose.addEventListener("click", () => {
+  setSpotifyPlayer(false);
+  spotifyToggle.focus();
+});
+
+document.addEventListener("click", (event) => {
+  if (!spotifyPlayer.hidden && !spotifyPlayer.contains(event.target) && !spotifyToggle.contains(event.target)) {
+    setSpotifyPlayer(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !spotifyPlayer.hidden) {
+    setSpotifyPlayer(false);
+    spotifyToggle.focus();
   }
 });
 

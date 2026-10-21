@@ -133,8 +133,14 @@ svg { width: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke
 .desktop-nav a { padding: .55rem .8rem; color: var(--muted); font-size: .88rem; border-radius: .65rem; transition: 180ms ease; }
 .desktop-nav a:hover, .desktop-nav a:focus-visible { color: var(--text); background: var(--surface-strong); outline: none; }
 
-.theme-toggle {
+.header-actions {
   justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.theme-toggle, .spotify-toggle {
   position: relative;
   display: grid;
   width: 2.7rem;
@@ -150,12 +156,36 @@ svg { width: 1.15em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke
   transition: transform 180ms ease, background-color 250ms ease;
 }
 .theme-toggle:hover { transform: rotate(5deg) scale(1.04); }
-.theme-toggle:focus-visible { outline: 3px solid color-mix(in srgb, var(--purple) 45%, transparent); outline-offset: 2px; }
+.spotify-toggle:hover, .spotify-toggle[aria-expanded="true"] { transform: translateY(-2px); background: color-mix(in srgb, #1ed760 16%, var(--surface-strong)); color: #1ed760; }
+.theme-toggle:focus-visible, .spotify-toggle:focus-visible, .spotify-close:focus-visible { outline: 3px solid color-mix(in srgb, var(--purple) 45%, transparent); outline-offset: 2px; }
 .theme-toggle span { position: absolute; display: grid; place-items: center; transition: transform 380ms cubic-bezier(.2,.8,.2,1), opacity 250ms ease; }
 .theme-toggle .sun { transform: translateY(0) rotate(0); opacity: 1; }
 .theme-toggle .moon { transform: translateY(180%) rotate(-35deg); opacity: 0; }
 [data-theme="light"] .theme-toggle .sun { transform: translateY(-180%) rotate(35deg); opacity: 0; }
 [data-theme="light"] .theme-toggle .moon { transform: translateY(0) rotate(0); opacity: 1; }
+
+.spotify-popover {
+  position: absolute;
+  top: calc(100% + .7rem);
+  right: 0;
+  width: min(28rem, calc(100vw - 2rem));
+  padding: .7rem;
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  animation: spotify-in 220ms cubic-bezier(.2,.8,.2,1);
+}
+.spotify-popover-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 2rem; padding: 0 .2rem .55rem .45rem; color: var(--muted); font: 700 .68rem ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; text-transform: uppercase; }
+.spotify-popover-heading span { display: flex; align-items: center; gap: .5rem; }
+.spotify-popover-heading i { width: .48rem; height: .48rem; border-radius: 50%; background: #1ed760; box-shadow: 0 0 0 .25rem color-mix(in srgb, #1ed760 14%, transparent); }
+.spotify-close { display: grid; width: 2rem; height: 2rem; padding: 0; place-items: center; border: 0; border-radius: .65rem; background: transparent; color: var(--muted); cursor: pointer; font-size: 1.35rem; line-height: 1; }
+.spotify-close:hover { background: var(--surface-strong); color: var(--text); }
+.spotify-popover iframe { display: block; border: 0; }
+
+@keyframes spotify-in { from { opacity: 0; transform: translateY(-8px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 main, footer { width: min(calc(100% - 2.25rem), 1180px); max-width: 100%; margin-inline: auto; }
 .hero > *, .about-grid > *, .stack-grid > *, .project-card > *, .links-grid > * { min-width: 0; }
@@ -352,7 +382,7 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
     transform: none;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "brand toggle"
+      "brand actions"
       "nav nav";
     gap: .55rem;
     padding: .65rem;
@@ -370,7 +400,9 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   .desktop-nav a { min-width: 0; padding: .48rem .1rem; font-size: .7452rem; text-align: center; }
   .brand-name { overflow: hidden; font-size: .88rem; text-overflow: ellipsis; white-space: nowrap; }
   .brand-photo { width: 2.35rem; height: 2.35rem; border-radius: .72rem; }
-  .theme-toggle { grid-area: toggle; width: 2.55rem; height: 2.55rem; }
+  .header-actions { grid-area: actions; }
+  .theme-toggle, .spotify-toggle { width: 2.55rem; height: 2.55rem; }
+  .spotify-popover { top: calc(100% + .55rem); right: 0; width: calc(100vw - 1.25rem); padding: .55rem; border-radius: 1rem; }
   .hero { padding-top: 8.5rem; gap: 1.5rem; }
   .hero h1 { font-size: clamp(3.05rem, 15vw, 4.8rem); }
   .hero-actions .button { flex: 1 1 10rem; }
