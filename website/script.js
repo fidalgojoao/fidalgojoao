@@ -99,13 +99,49 @@ const swipeCue = document.querySelector(".swipe-cue");
 
 if (overviewGrid && swipeCue) {
   let swipeFrame;
+  const overviewCards = [...overviewGrid.querySelectorAll(".overview-card")];
+  const previousCardButton = swipeCue.querySelector(".cue-left");
+  const nextCardButton = swipeCue.querySelector(".cue-right");
+
+  const getCurrentCardIndex = () => {
+    const gridCenter = overviewGrid.getBoundingClientRect().left + overviewGrid.clientWidth / 2;
+    let nearestIndex = 0;
+    let nearestDistance = Infinity;
+
+    overviewCards.forEach((card, index) => {
+      const bounds = card.getBoundingClientRect();
+      const distance = Math.abs(bounds.left + bounds.width / 2 - gridCenter);
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
+      }
+    });
+
+    return nearestIndex;
+  };
+
+  const scrollToCard = (index) => {
+    const card = overviewCards[index];
+    if (!card) return;
+
+    const gridBounds = overviewGrid.getBoundingClientRect();
+    const cardBounds = card.getBoundingClientRect();
+    const targetLeft = overviewGrid.scrollLeft + cardBounds.left - gridBounds.left - (overviewGrid.clientWidth - cardBounds.width) / 2;
+    overviewGrid.scrollTo({ left: targetLeft, behavior: reducedMotion.matches ? "auto" : "smooth" });
+  };
 
   const updateSwipeCue = () => {
-    const maxScroll = overviewGrid.scrollWidth - overviewGrid.clientWidth;
-    const progress = maxScroll > 0 ? overviewGrid.scrollLeft / maxScroll : 0;
-    swipeCue.classList.toggle("is-start", progress < 0.04);
-    swipeCue.classList.toggle("is-end", progress > 0.96);
+    const currentIndex = getCurrentCardIndex();
+    const isStart = currentIndex === 0;
+    const isEnd = currentIndex === overviewCards.length - 1;
+    swipeCue.classList.toggle("is-start", isStart);
+    swipeCue.classList.toggle("is-end", isEnd);
+    previousCardButton.disabled = isStart;
+    nextCardButton.disabled = isEnd;
   };
+
+  previousCardButton.addEventListener("click", () => scrollToCard(Math.max(0, getCurrentCardIndex() - 1)));
+  nextCardButton.addEventListener("click", () => scrollToCard(Math.min(overviewCards.length - 1, getCurrentCardIndex() + 1)));
 
   overviewGrid.addEventListener("scroll", () => {
     cancelAnimationFrame(swipeFrame);

@@ -9,7 +9,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261022-11" />
+    <link rel="stylesheet" href="styles.css?v=20261022-12" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -73,7 +73,11 @@
         <header class="overview-heading reveal">
           <div><span class="section-number">THE WHOLE PICTURE</span><h2 id="overview-title">Everything <span>at a glance.</span></h2></div>
         </header>
-        <div class="swipe-cue is-start" aria-hidden="true"><span class="cue-arrow cue-left">←</span><span class="cue-label">More cards</span><span class="cue-arrow cue-right">→</span></div>
+        <div class="swipe-cue is-start" aria-label="Browse overview cards">
+          <button class="cue-arrow cue-left" type="button" aria-label="Previous card">←</button>
+          <span class="cue-label">More cards</span>
+          <button class="cue-arrow cue-right" type="button" aria-label="Next card">→</button>
+        </div>
 
         <div class="overview-grid">
           <article class="overview-card overview-about reveal" id="about">
@@ -122,6 +126,6 @@
     </main>
 
     <footer><a class="brand footer-brand" href="#top"><img class="brand-photo" src="assets/profile-bw.jpg" alt="" /><span class="brand-name">João Fidalgo</span></a><p>Learning, building, improving.</p><p>© <span id="year"></span> João Fidalgo</p></footer>
-    <script src="script.js?v=20261022-3"></script>
+    <script src="script.js?v=20261022-4"></script>
   </body>
 </html>
