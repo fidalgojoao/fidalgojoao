@@ -9,7 +9,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261022-15" />
+    <link rel="stylesheet" href="styles.css?v=20261022-16" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -33,7 +33,7 @@
       </nav>
       <div class="header-actions">
         <span class="audio-visualizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <button class="spotify-toggle" type="button" aria-label="Open Spotify player" aria-expanded="false" aria-controls="spotify-player" title="Play Instant Crush">
+        <button class="spotify-toggle" type="button" aria-label="Open Spotify player" aria-expanded="false" aria-controls="spotify-player" title="Open music player">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
         </button>
         <button class="theme-toggle" type="button" aria-label="Switch to light mode" title="Change theme">
@@ -52,9 +52,9 @@
           <button class="spotify-close" type="button" aria-label="Close Spotify player">×</button>
         </div>
         <div class="spotify-carousel">
-          <button class="spotify-track-arrow spotify-previous" type="button" aria-label="Play previous track" hidden>←</button>
+          <button class="spotify-track-arrow spotify-previous" type="button" aria-label="Play previous track" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
           <div class="spotify-embed-shell"><div id="spotify-embed"><span>Loading Spotify…</span></div></div>
-          <button class="spotify-track-arrow spotify-next" type="button" aria-label="Play Get Lucky">→</button>
+          <button class="spotify-track-arrow spotify-next" type="button" aria-label="Play Get Lucky"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
         </div>
         <div class="spotify-track-status" aria-live="polite"><span class="active"></span><span></span><b>Instant Crush</b></div>
       </div>
@@ -140,6 +140,6 @@
     </main>
 
     <footer><a class="brand footer-brand" href="#top"><img class="brand-photo" src="assets/profile-bw.jpg" alt="" /><span class="brand-name">João Fidalgo</span></a><p>Learning, building, improving.</p><p>© <span id="year"></span> João Fidalgo</p></footer>
-    <script src="script.js?v=20261022-6"></script>
+    <script src="script.js?v=20261022-7"></script>
   </body>
 </html>

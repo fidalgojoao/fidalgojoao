@@ -14,8 +14,6 @@ const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
 let themeWasManuallyChanged = false;
 let spotifyController;
 let spotifyTrackIndex = 0;
-let spotifyAutoplayPending = false;
-let spotifyControllerReady = false;
 let spotifyPlayWhenReady = false;
 let spotifySwitchTimeout;
 
@@ -73,7 +71,6 @@ function loadSpotifyTrack(index, play = true) {
   if (!spotifyController || index < 0 || index >= spotifyTracks.length || index === spotifyTrackIndex) return;
   window.clearTimeout(spotifySwitchTimeout);
   spotifyController.pause();
-  spotifyControllerReady = false;
   spotifyPlayWhenReady = play;
   setSpotifyPlaying(false);
   spotifyEmbedShell.classList.add("is-changing");
@@ -85,28 +82,9 @@ function loadSpotifyTrack(index, play = true) {
   }, 170);
 }
 
-function playFirstSpotifyTrack() {
-  spotifyAutoplayPending = true;
-  if (!spotifyController) return;
-
-  if (spotifyTrackIndex !== 0) {
-    spotifyAutoplayPending = false;
-    loadSpotifyTrack(0, true);
-    return;
-  }
-
-  if (spotifyControllerReady) {
-    spotifyController.play();
-    spotifyAutoplayPending = false;
-  } else {
-    spotifyPlayWhenReady = true;
-  }
-}
-
 spotifyToggle.addEventListener("click", () => {
   const willOpen = spotifyPlayer.hidden;
   setSpotifyPlayer(willOpen);
-  if (willOpen) playFirstSpotifyTrack();
 });
 
 spotifyPrevious.addEventListener("click", () => loadSpotifyTrack(spotifyTrackIndex - 1));
@@ -137,10 +115,8 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     (controller) => {
       spotifyController = controller;
       controller.addListener("ready", () => {
-        spotifyControllerReady = true;
         spotifyEmbedShell.classList.remove("is-changing");
-        if (spotifyAutoplayPending || spotifyPlayWhenReady) {
-          spotifyAutoplayPending = false;
+        if (spotifyPlayWhenReady) {
           spotifyPlayWhenReady = false;
           controller.play();
         }
