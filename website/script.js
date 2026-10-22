@@ -15,6 +15,9 @@ let themeWasManuallyChanged = false;
 let spotifyController;
 let spotifyTrackIndex = 0;
 let spotifyAutoplayPending = false;
+let spotifyControllerReady = false;
+let spotifyPlayWhenReady = false;
+let spotifySwitchTimeout;
 
 const spotifyTracks = [
   {
@@ -68,14 +71,17 @@ function updateSpotifyTrackUi() {
 
 function loadSpotifyTrack(index, play = true) {
   if (!spotifyController || index < 0 || index >= spotifyTracks.length || index === spotifyTrackIndex) return;
+  window.clearTimeout(spotifySwitchTimeout);
+  spotifyController.pause();
+  spotifyControllerReady = false;
+  spotifyPlayWhenReady = play;
+  setSpotifyPlaying(false);
   spotifyEmbedShell.classList.add("is-changing");
 
-  window.setTimeout(() => {
+  spotifySwitchTimeout = window.setTimeout(() => {
     spotifyTrackIndex = index;
     spotifyController.loadEntity(spotifyTracks[index].url);
     updateSpotifyTrackUi();
-    if (play) spotifyController.play();
-    requestAnimationFrame(() => spotifyEmbedShell.classList.remove("is-changing"));
   }, 170);
 }
 
@@ -84,12 +90,17 @@ function playFirstSpotifyTrack() {
   if (!spotifyController) return;
 
   if (spotifyTrackIndex !== 0) {
-    spotifyTrackIndex = 0;
-    spotifyController.loadEntity(spotifyTracks[0].url);
-    updateSpotifyTrackUi();
+    spotifyAutoplayPending = false;
+    loadSpotifyTrack(0, true);
+    return;
   }
-  spotifyController.play();
-  spotifyAutoplayPending = false;
+
+  if (spotifyControllerReady) {
+    spotifyController.play();
+    spotifyAutoplayPending = false;
+  } else {
+    spotifyPlayWhenReady = true;
+  }
 }
 
 spotifyToggle.addEventListener("click", () => {
@@ -126,12 +137,17 @@ window.onSpotifyIframeApiReady = (IFrameAPI) => {
     (controller) => {
       spotifyController = controller;
       controller.addListener("ready", () => {
-        if (spotifyAutoplayPending) playFirstSpotifyTrack();
+        spotifyControllerReady = true;
+        spotifyEmbedShell.classList.remove("is-changing");
+        if (spotifyAutoplayPending || spotifyPlayWhenReady) {
+          spotifyAutoplayPending = false;
+          spotifyPlayWhenReady = false;
+          controller.play();
+        }
       });
       controller.addListener("playback_update", (event) => {
         setSpotifyPlaying(!event.data.isPaused && !event.data.isBuffering);
       });
-      if (spotifyAutoplayPending) playFirstSpotifyTrack();
     }
   );
 };
