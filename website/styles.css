@@ -270,7 +270,8 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   .overview-heading { display: block; margin-bottom: .9rem; }
   .overview-heading h2 { font-size: clamp(2.25rem, 11vw, 3rem); }
   .overview-heading > p { max-width: none; margin-top: .5rem; text-align: left; }
-  .overview-grid { display: flex; width: calc(100% + .625rem); gap: .7rem; padding: 0 .625rem .7rem 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .overview-grid { display: flex; width: calc(100% + .625rem); gap: .7rem; padding: 0 .625rem .7rem 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .overview-grid::-webkit-scrollbar { display: none; }
   .overview-card { flex: 0 0 min(88vw, 22rem); min-height: 31rem; padding: 1.1rem; scroll-snap-align: start; scroll-margin-top: 9rem; }
   .overview-card h3 { font-size: clamp(1.85rem, 8.5vw, 2.35rem); }
   .overview-card > p { font-size: .76rem; }
