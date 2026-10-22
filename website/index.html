@@ -9,7 +9,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261022-4" />
+    <link rel="stylesheet" href="styles.css?v=20261022-5" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -69,53 +69,56 @@
         </div>
       </section>
 
-      <section class="compact-section" id="about">
-        <header class="compact-heading reveal"><span class="section-number">01 / ABOUT</span><h2>Operations experience.<br /><span>Builder mindset.</span></h2><p>The short version first. The full story is one tap away.</p></header>
-        <div class="about-dashboard">
-          <article class="story-card panel reveal">
-            <p class="panel-label">THE STORY</p><h3>You can call me <span>Johnny.</span> 😁</h3>
-            <p>I started learning C++ in Codecademy in August 2026, with the long-term goal of building AAA games, operating systems and emulators from scratch.</p>
-            <details><summary>Read the full background <span>+</span></summary><div class="detail-copy"><p>I currently rely a lot on AI to help me write code and understand it.</p><p>Another passion is Android Custom ROMs. Once I feel comfortable with C++, I’ll start learning Kotlin and try to build ROMs. For now, I use AI to get a head start.</p><p>Before transitioning into software development, I worked as a WFM Real Time Analyst, helping manage the workforce of a project with nearly 600 employees.</p><p>I built Microsoft Excel reports for operational KPIs and used formulas, Power Query and Microsoft Power Automate to turn hours of manual work into minutes.</p></div></details>
+      <section class="overview-section" aria-labelledby="overview-title">
+        <header class="overview-heading reveal">
+          <div><span class="section-number">THE WHOLE PICTURE</span><h2 id="overview-title">Everything <span>at a glance.</span></h2></div>
+          <p>Four compact cards. Swipe sideways on your phone.</p>
+        </header>
+
+        <div class="overview-grid">
+          <article class="overview-card overview-about reveal" id="about">
+            <div class="overview-card-head"><span>01 / ABOUT</span><b>Johnny 😁</b></div>
+            <h3>Operations experience.<br /><span>Builder mindset.</span></h3>
+            <p>I started learning C++ in August 2026, aiming to build games, operating systems and emulators from scratch.</p>
+            <div class="mini-metrics"><span><strong>600</strong> employees supported</span><span><strong>hrs→min</strong> through automation</span></div>
+            <blockquote>Learn deeply. Build boldly. Keep improving.</blockquote>
+            <details><summary>Full background <span>+</span></summary><div><p>I use AI to help me write and understand code, and plan to learn Kotlin for Android Custom ROM development.</p><p>Before software, I was a WFM Real Time Analyst. I built Excel reports and used Power Query and Power Automate to remove hours of manual work.</p></div></details>
           </article>
-          <div class="impact-grid reveal" aria-label="Career highlights">
-            <article class="metric-card accent-card"><strong>600</strong><span>employees supported<br />in real time</span></article>
-            <article class="metric-card"><strong>hrs → min</strong><span>manual work reduced<br />through automation</span></article>
-            <article class="principle-card"><span>“</span><p>Learn deeply.<br />Build boldly.<br />Keep improving.</p></article>
-          </div>
-        </div>
-      </section>
 
-      <section class="compact-section" id="stack">
-        <header class="compact-heading reveal"><span class="section-number">02 / STACK</span><h2>Current toolkit.<br /><span>Next milestones.</span></h2><p>Swipe the cards on smaller screens.</p></header>
-        <div class="skill-board" aria-label="Technology skills">
-          <article class="skill-column panel reveal"><div class="skill-title"><span>{ }</span><div><small>BACKEND</small><h3>Building foundations</h3></div></div><ul><li><b>C++</b><em class="active">In progress</em></li><li><b>Kotlin</b><em>Planned</em></li><li><b>Java</b><em>Planned</em></li><li><b>Python</b><em>Planned</em></li><li><b>Rust</b><em>Planned</em></li></ul></article>
-          <article class="skill-column panel reveal"><div class="skill-title"><span>&lt;/&gt;</span><div><small>FRONTEND & DATA</small><h3>Making ideas visible</h3></div></div><ul><li><b>HTML</b><em>Beginner</em></li><li><b>CSS</b><em>Beginner</em></li><li><b>PHP</b><em>Planned</em></li><li><b>MySQL</b><em>Planned</em></li></ul></article>
-          <article class="skill-column panel featured reveal"><div class="skill-title"><span>↗</span><div><small>TOOLS & PRACTICES</small><h3>Experience meets code</h3></div></div><ul><li><b>Microsoft Excel</b><em class="advanced">Advanced</em></li><li><b>Power Automate</b><em class="intermediate">Intermediate</em></li><li><b>Visual Studio</b><em>Beginner</em></li><li><b>Power BI</b><em>Beginner</em></li><li><b>OOP</b><em>Beginner</em></li></ul></article>
-        </div>
-      </section>
+          <article class="overview-card overview-stack reveal" id="stack">
+            <div class="overview-card-head"><span>02 / STACK</span><b>13 tools</b></div>
+            <h3>Now, next,<br /><span>and already useful.</span></h3>
+            <div class="stack-strips">
+              <div><small>LEARNING NOW</small><span><b>C++</b><em>In progress</em></span></div>
+              <div><small>FOUNDATIONS</small><span><b>HTML · CSS · Visual Studio · Power BI · OOP</b><em>Beginner</em></span></div>
+              <div><small>EXPERIENCE</small><span><b>Excel · Power Automate</b><em>Advanced / Intermediate</em></span></div>
+              <div><small>NEXT</small><span><b>Kotlin · Java · Python · Rust · PHP · MySQL</b><em>Planned</em></span></div>
+            </div>
+          </article>
 
-      <section class="compact-section" id="projects">
-        <header class="compact-heading reveal"><span class="section-number">03 / PROJECTS</span><h2>Ideas people<br /><span>can actually use.</span></h2><p>Two Android party games, presented without the page-length mockups.</p></header>
-        <div class="project-grid">
-          <article class="project-card reveal"><div class="project-info"><span class="project-badge"><i></i> Android app</span><h3>Truth or Dare</h3><p>An offline party game designed to keep the fun going wherever you are.</p><ul><li>Offline</li><li>Party game</li></ul><div class="project-actions"><a class="button primary" href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">Google Play ↗</a><a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">GitHub ↗</a></div></div><div class="mini-device purple" aria-hidden="true"><span>TRUTH OR DARE</span><b>?</b><small>Ready to play?</small></div></article>
-          <article class="project-card reveal"><div class="project-info"><span class="project-badge"><i></i> Android app</span><h3>Never Have I Ever</h3><p>A party game that gets everyone talking with classic prompts.</p><ul><li>Android</li><li>Social</li></ul><div class="project-actions"><a class="button primary" href="https://play.google.com/apps/testing/game.neverhaveiever" target="_blank" rel="noreferrer">Join the test ↗</a><a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">GitHub ↗</a></div></div><div class="mini-device pink" aria-hidden="true"><span>NEVER HAVE I EVER</span><b>I</b><small>Ready to find out?</small></div></article>
-        </div>
-        <div class="learning-bar reveal"><span><small>CURRENTLY LEARNING</small><b>C++</b></span><div><i></i></div><p>One concept at a time. One project at a time.</p></div>
-      </section>
+          <article class="overview-card overview-projects reveal" id="projects">
+            <div class="overview-card-head"><span>03 / PROJECTS</span><b>Android</b></div>
+            <h3>Small games.<br /><span>Real releases.</span></h3>
+            <div class="project-strips">
+              <div><span class="project-mark purple">?</span><span><b>Truth or Dare</b><small>Offline party game</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">Code ↗</a></span></div>
+              <div><span class="project-mark pink">I</span><span><b>Never Have I Ever</b><small>Social prompt game</small></span><span class="strip-links"><a href="https://play.google.com/apps/testing/game.neverhaveiever" target="_blank" rel="noreferrer">Test ↗</a><a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">Code ↗</a></span></div>
+            </div>
+            <p class="current-line"><i></i><span>Currently learning</span><strong>C++</strong></p>
+          </article>
 
-      <section class="compact-section connect-section" id="links">
-        <header class="compact-heading reveal"><span class="section-number">04 / CONNECT</span><h2>Find me online.<br /><span>Let’s build something.</span></h2></header>
-        <div class="connect-layout">
-          <div class="link-board reveal">
-            <a class="quick-link spotify" href="https://open.spotify.com/user/7u4cq5x7p428c4udt9wg0awwo?si=384454f782e24566" target="_blank" rel="noreferrer"><img src="assets/brands/spotify.svg" alt="" /><span><b>Spotify</b><small>Listening now</small></span><i>↗</i></a>
-            <a class="quick-link github" href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer"><img src="assets/brands/github.svg" alt="" /><span><b>GitHub</b><small>Projects</small></span><i>↗</i></a>
-            <a class="quick-link instagram" href="https://instagram.com/joaochild" target="_blank" rel="noreferrer"><img src="assets/brands/instagram.svg" alt="" /><span><b>Instagram</b><small>@joaochild</small></span><i>↗</i></a>
-            <a class="quick-link discord" href="https://discord.gg/EJ7ThCgw4g" target="_blank" rel="noreferrer"><img src="assets/brands/discord.svg" alt="" /><span><b>Discord</b><small>Community</small></span><i>↗</i></a>
-            <a class="quick-link linkedin" href="https://linkedin.com/in/joaofidalgo1998" target="_blank" rel="noreferrer"><img src="assets/brands/linkedin.svg" alt="" /><span><b>LinkedIn</b><small>Professional</small></span><i>↗</i></a>
-            <a class="quick-link playstore" href="https://play.google.com/apps/testing/game.truthordare" target="_blank" rel="noreferrer"><img src="assets/brands/google-play.svg" alt="" /><span><b>Truth or Dare</b><small>Google Play</small></span><i>↗</i></a>
-            <a class="quick-link playstore" href="https://play.google.com/apps/testing/game.neverhaveiever" target="_blank" rel="noreferrer"><img src="assets/brands/google-play.svg" alt="" /><span><b>Never Have I Ever</b><small>Google Play</small></span><i>↗</i></a>
-          </div>
-          <aside class="contact-card reveal"><p class="panel-label">SAY HELLO</p><h3>Have an idea?<br /><span class="gradient-text">Let’s talk.</span></h3><p>Follow the journey, explore my code, or connect through any of the links here.</p><a class="button primary" href="https://linktr.ee/joao.fidalgo" target="_blank" rel="noreferrer">Open my Linktree ↗</a></aside>
+          <article class="overview-card overview-links reveal" id="links">
+            <div class="overview-card-head"><span>04 / CONNECT</span><b>Say hello</b></div>
+            <h3>Find me online.<br /><span>Let’s build.</span></h3>
+            <div class="social-tiles">
+              <a href="https://open.spotify.com/user/7u4cq5x7p428c4udt9wg0awwo?si=384454f782e24566" target="_blank" rel="noreferrer"><img src="assets/brands/spotify.svg" alt="" /><span>Spotify</span></a>
+              <a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer"><img src="assets/brands/github.svg" alt="" /><span>GitHub</span></a>
+              <a href="https://instagram.com/joaochild" target="_blank" rel="noreferrer"><img src="assets/brands/instagram.svg" alt="" /><span>Instagram</span></a>
+              <a href="https://discord.gg/EJ7ThCgw4g" target="_blank" rel="noreferrer"><img src="assets/brands/discord.svg" alt="" /><span>Discord</span></a>
+              <a href="https://linkedin.com/in/joaofidalgo1998" target="_blank" rel="noreferrer"><img src="assets/brands/linkedin.svg" alt="" /><span>LinkedIn</span></a>
+              <a href="https://play.google.com/apps/testing/game.truthordare" target="_blank" rel="noreferrer"><img src="assets/brands/google-play.svg" alt="" /><span>My apps</span></a>
+            </div>
+            <a class="button primary overview-cta" href="https://linktr.ee/joao.fidalgo" target="_blank" rel="noreferrer">Open my Linktree ↗</a>
+          </article>
         </div>
       </section>
     </main>
