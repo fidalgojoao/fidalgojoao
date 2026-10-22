@@ -9,7 +9,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261022-8" />
+    <link rel="stylesheet" href="styles.css?v=20261022-9" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -26,7 +26,7 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="João Fidalgo — home">
         <img class="brand-photo" src="assets/profile-bw.jpg" alt="" />
-        <span class="brand-name">João Fidalgo</span>
+        <span class="brand-copy"><span class="brand-name">João Fidalgo</span><small>But you can call me Johnny 😁</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#about">About</a><a href="#stack">Stack</a><a href="#projects">Projects</a><a href="#links">Links</a>
@@ -49,7 +49,7 @@
     <main id="main-content">
       <section class="hero" id="top">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span></span> Portugal · Learning in public</div>
+          <div class="eyebrow"><span></span> Lisbon, Portugal · Learning in public</div>
           <h1>Hi, I’m João.<br /><span class="gradient-text">I turn curiosity into code.</span></h1>
           <p class="hero-lead">Software Developer <em>(in the making)</em> based in Portugal, focused on learning <strong>C++</strong> right now.</p>
           <div class="hero-actions">
@@ -72,13 +72,12 @@
       <section class="overview-section" aria-labelledby="overview-title">
         <header class="overview-heading reveal">
           <div><span class="section-number">THE WHOLE PICTURE</span><h2 id="overview-title">Everything <span>at a glance.</span></h2></div>
-          <p>Four compact cards. Swipe sideways on your phone.</p>
         </header>
-        <div class="swipe-cue" aria-hidden="true">More cards <span>→</span></div>
+        <div class="swipe-cue is-start" aria-hidden="true"><span class="cue-arrow cue-left">←</span><span class="cue-label">More cards</span><span class="cue-arrow cue-right">→</span></div>
 
         <div class="overview-grid">
           <article class="overview-card overview-about reveal" id="about">
-            <div class="overview-card-head"><span>01 / ABOUT</span><b>Johnny 😁</b></div>
+            <div class="overview-card-head"><span>01 / ABOUT</span><b>Experience</b></div>
             <h3>Operations experience.<br /><span>Builder mindset.</span></h3>
             <p>I started learning C++ in August 2026, aiming to build games, operating systems and emulators from scratch. I use AI to help me write and understand code, and plan to learn Kotlin for Android Custom ROM development. Before software, I was a WFM Real Time Analyst, building Excel reports and using Power Query and Power Automate to remove hours of manual work.</p>
             <div class="mini-metrics"><span><strong>600</strong> employees supported</span><span><strong>hrs→min</strong> through automation</span></div>
@@ -123,6 +122,6 @@
     </main>
 
     <footer><a class="brand footer-brand" href="#top"><img class="brand-photo" src="assets/profile-bw.jpg" alt="" /><span class="brand-name">João Fidalgo</span></a><p>Learning, building, improving.</p><p>© <span id="year"></span> João Fidalgo</p></footer>
-    <script src="script.js?v=20261022-2"></script>
+    <script src="script.js?v=20261022-3"></script>
   </body>
 </html>

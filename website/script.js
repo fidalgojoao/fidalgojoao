@@ -93,3 +93,26 @@ if (!reducedMotion.matches && window.matchMedia("(pointer: fine)").matches) {
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+const overviewGrid = document.querySelector(".overview-grid");
+const swipeCue = document.querySelector(".swipe-cue");
+
+if (overviewGrid && swipeCue) {
+  let swipeFrame;
+
+  const updateSwipeCue = () => {
+    const maxScroll = overviewGrid.scrollWidth - overviewGrid.clientWidth;
+    const progress = maxScroll > 0 ? overviewGrid.scrollLeft / maxScroll : 0;
+    swipeCue.classList.toggle("is-start", progress < 0.04);
+    swipeCue.classList.toggle("is-end", progress > 0.96);
+  };
+
+  overviewGrid.addEventListener("scroll", () => {
+    cancelAnimationFrame(swipeFrame);
+    swipeFrame = requestAnimationFrame(updateSwipeCue);
+  }, { passive: true });
+
+  window.addEventListener("resize", updateSwipeCue);
+  window.addEventListener("load", updateSwipeCue);
+  requestAnimationFrame(updateSwipeCue);
+}
