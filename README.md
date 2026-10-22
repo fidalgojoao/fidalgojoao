@@ -2,7 +2,7 @@
 
 Software Developer (in the making) based in Portugal, focused on learning C++ right now.
 
-## 🧠 About Me
+## 🧠 About Me 
 
 Updated: Sep 2026
 
