@@ -9,7 +9,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261022-14" />
+    <link rel="stylesheet" href="styles.css?v=20261022-15" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -42,10 +42,14 @@
         </button>
       </div>
       <div class="spotify-popover" id="spotify-player" hidden>
-        <div class="spotify-popover-heading"><span><i aria-hidden="true"></i> Now playing</span><button class="spotify-close" type="button" aria-label="Close Spotify player">×</button></div>
-        <div class="spotify-volume" title="Spotify embeds use your Spotify or device volume">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6m2.5-8.5a7.5 7.5 0 0 1 0 11"/></svg>
-          <span>Volume is controlled by Spotify or your device</span>
+        <div class="spotify-popover-heading">
+          <span><i aria-hidden="true"></i> Now playing</span>
+          <div class="spotify-volume" title="Volume is controlled by Spotify or your device">
+            <svg class="volume-min" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/></svg>
+            <input type="range" min="0" max="100" value="70" disabled aria-label="Volume is controlled by Spotify or your device" />
+            <svg class="volume-max" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6m2.5-8.5a7.5 7.5 0 0 1 0 11"/></svg>
+          </div>
+          <button class="spotify-close" type="button" aria-label="Close Spotify player">×</button>
         </div>
         <div class="spotify-carousel">
           <button class="spotify-track-arrow spotify-previous" type="button" aria-label="Play previous track" hidden>←</button>
