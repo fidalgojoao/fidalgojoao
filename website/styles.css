@@ -210,7 +210,7 @@ footer p { margin: 0; }
   .skill-board, .project-grid { display: flex; width: calc(100% + .625rem); gap: .7rem; padding: 0 .625rem .65rem 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }.skill-column { flex: 0 0 min(84vw,20rem); scroll-snap-align: start; }.project-card { flex: 0 0 min(90vw,25rem); min-height: 23rem; grid-template-columns: minmax(0,1fr) 7.5rem; scroll-snap-align: start; }.mini-device { min-height: 17.5rem; }.project-info h3 { font-size: clamp(2rem,10vw,3rem); }.learning-bar { grid-template-columns: 1fr; gap: .55rem; }.learning-bar p { display: none; }
   .link-board { grid-auto-flow: column; grid-template-columns: repeat(4, minmax(9.5rem, 1fr)); grid-template-rows: repeat(2, 4rem); width: calc(100% + .625rem); padding: 0 .625rem .6rem 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }.quick-link { min-height: 4rem; grid-template-columns: 2rem 1fr; padding: .6rem; scroll-snap-align: start; }.quick-link > i { display: none; }.quick-link b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.quick-link small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.contact-card { min-height: 11.5rem; }.connect-layout { gap: .65rem; }
   footer { display: grid; grid-template-columns: auto 1fr auto; gap: .45rem; padding: .55rem 0 .65rem; text-align: center; font-size: .55rem; }
-  .footer-brand { gap: .4rem; }
+  .footer-brand { grid-area: auto; gap: .4rem; }
   .footer-brand .brand-photo { width: 1.75rem; height: 1.75rem; border-radius: .55rem; }
   .footer-brand .brand-name { font-size: .7rem; }
   footer > p:last-child { text-align: right; }
