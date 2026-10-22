@@ -9,7 +9,7 @@
     <title>João Fidalgo</title>
     <link rel="icon" type="image/png" href="assets/favicon-rounded.png" />
     <link rel="apple-touch-icon" href="assets/favicon-rounded.png" />
-    <link rel="stylesheet" href="styles.css?v=20261022-12" />
+    <link rel="stylesheet" href="styles.css?v=20261022-13" />
     <script>
       (() => {
         const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
@@ -32,6 +32,7 @@
         <a href="#about">About</a><a href="#stack">Stack</a><a href="#projects">Projects</a><a href="#links">Links</a>
       </nav>
       <div class="header-actions">
+        <span class="audio-visualizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <button class="spotify-toggle" type="button" aria-label="Open Spotify player" aria-expanded="false" aria-controls="spotify-player" title="Play Instant Crush">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
         </button>
@@ -42,7 +43,17 @@
       </div>
       <div class="spotify-popover" id="spotify-player" hidden>
         <div class="spotify-popover-heading"><span><i aria-hidden="true"></i> Now playing</span><button class="spotify-close" type="button" aria-label="Close Spotify player">×</button></div>
-        <iframe data-testid="embed-iframe" title="Instant Crush by Daft Punk featuring Julian Casablancas on Spotify" style="border-radius:12px" src="https://open.spotify.com/embed/track/2cGxRwrMyEAp8dEbuZaVv6?utm_source=generator&theme=0&si=af6c673476194188" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="spotify-volume" title="Spotify embeds use your Spotify or device volume">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6m2.5-8.5a7.5 7.5 0 0 1 0 11"/></svg>
+          <input type="range" min="0" max="100" value="70" disabled aria-label="Volume is controlled by Spotify or your device" />
+          <span>Device volume</span>
+        </div>
+        <div class="spotify-carousel">
+          <button class="spotify-track-arrow spotify-previous" type="button" aria-label="Play previous track" hidden>←</button>
+          <div class="spotify-embed-shell"><div id="spotify-embed"><span>Loading Spotify…</span></div></div>
+          <button class="spotify-track-arrow spotify-next" type="button" aria-label="Play Get Lucky">→</button>
+        </div>
+        <div class="spotify-track-status" aria-live="polite"><span class="active"></span><span></span><b>Instant Crush</b></div>
       </div>
     </header>
 
@@ -54,7 +65,7 @@
           <p class="hero-lead">Software Developer <em>(in the making)</em> based in Portugal, focused on learning <strong>C++</strong> right now.</p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">Explore my work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a>
-            <a class="button secondary" href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">GitHub profile</a>
+            <a class="button secondary" href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">GitHub profile</a>
           </div>
           <div class="hero-facts" aria-label="Quick profile"><span><b>01</b> C++ learner</span><span><b>02</b> Automation-minded</span><span><b>03</b> Android enthusiast</span></div>
         </div>
@@ -103,8 +114,8 @@
             <div class="overview-card-head"><span>03 / PROJECTS</span><b>Android</b></div>
             <h3>Small games.<br /><span>Real releases.</span></h3>
             <div class="project-strips">
-              <div><span class="project-mark purple">?</span><span><b>Truth or Dare</b><small>Offline party game</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">Code ↗</a></span></div>
-              <div><span class="project-mark pink">I</span><span><b>Never Have I Ever</b><small>Social prompt game</small></span><span class="strip-links"><a href="https://play.google.com/apps/testing/game.neverhaveiever" target="_blank" rel="noreferrer">Test ↗</a><a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer">Code ↗</a></span></div>
+              <div><span class="project-mark purple">?</span><span><b>Truth or Dare</b><small>Offline party game</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">Code ↗</a></span></div>
+              <div><span class="project-mark pink">I</span><span><b>Never Have I Ever</b><small>Social prompt game</small></span><span class="strip-links"><a href="https://play.google.com/apps/testing/game.neverhaveiever" target="_blank" rel="noreferrer">Test ↗</a><a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">Code ↗</a></span></div>
             </div>
             <p class="current-line"><i></i><span>Currently learning</span><strong>C++</strong></p>
           </article>
@@ -114,7 +125,7 @@
             <h3>Find me online.<br /><span>Let’s build.</span></h3>
             <div class="social-tiles">
               <a href="https://open.spotify.com/user/7u4cq5x7p428c4udt9wg0awwo?si=384454f782e24566" target="_blank" rel="noreferrer"><img src="assets/brands/spotify.svg" alt="" /><span>Spotify</span></a>
-              <a href="https://github.com/joaofidalgo1998" target="_blank" rel="noreferrer"><img src="assets/brands/github.svg" alt="" /><span>GitHub</span></a>
+              <a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer"><img src="assets/brands/github.svg" alt="" /><span>GitHub</span></a>
               <a href="https://instagram.com/joaochild" target="_blank" rel="noreferrer"><img src="assets/brands/instagram.svg" alt="" /><span>Instagram</span></a>
               <a href="https://discord.gg/EJ7ThCgw4g" target="_blank" rel="noreferrer"><img src="assets/brands/discord.svg" alt="" /><span>Discord</span></a>
               <a class="linkedin-tile" href="https://linkedin.com/in/joaofidalgo1998" target="_blank" rel="noreferrer"><img src="assets/brands/linkedin.svg" alt="" /><span>LinkedIn</span></a>
@@ -126,6 +137,6 @@
     </main>
 
     <footer><a class="brand footer-brand" href="#top"><img class="brand-photo" src="assets/profile-bw.jpg" alt="" /><span class="brand-name">João Fidalgo</span></a><p>Learning, building, improving.</p><p>© <span id="year"></span> João Fidalgo</p></footer>
-    <script src="script.js?v=20261022-4"></script>
+    <script src="script.js?v=20261022-5"></script>
   </body>
 </html>

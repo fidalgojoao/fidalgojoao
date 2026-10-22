@@ -4,8 +4,28 @@ const themeColor = document.querySelector('meta[name="theme-color"]');
 const spotifyToggle = document.querySelector(".spotify-toggle");
 const spotifyPlayer = document.querySelector(".spotify-popover");
 const spotifyClose = document.querySelector(".spotify-close");
+const spotifyEmbedHost = document.querySelector("#spotify-embed");
+const spotifyEmbedShell = document.querySelector(".spotify-embed-shell");
+const spotifyPrevious = document.querySelector(".spotify-previous");
+const spotifyNext = document.querySelector(".spotify-next");
+const spotifyTrackStatus = document.querySelector(".spotify-track-status");
+const audioVisualizer = document.querySelector(".audio-visualizer");
 const systemTheme = window.matchMedia("(prefers-color-scheme: light)");
 let themeWasManuallyChanged = false;
+let spotifyController;
+let spotifyTrackIndex = 0;
+let spotifyAutoplayPending = false;
+
+const spotifyTracks = [
+  {
+    name: "Instant Crush",
+    url: "https://open.spotify.com/track/2cGxRwrMyEAp8dEbuZaVv6?utm_source=generator&theme=0&si=af6c673476194188"
+  },
+  {
+    name: "Get Lucky",
+    url: "https://open.spotify.com/track/69kOkLUCkxIZYexIgSG8rq?utm_source=generator&theme=0&si=df044c543a0e47cc"
+  }
+];
 
 function applyTheme(theme) {
   root.dataset.theme = theme;
@@ -33,9 +53,53 @@ function setSpotifyPlayer(open) {
   spotifyToggle.setAttribute("aria-label", `${open ? "Close" : "Open"} Spotify player`);
 }
 
+function setSpotifyPlaying(playing) {
+  audioVisualizer.classList.toggle("is-playing", playing);
+}
+
+function updateSpotifyTrackUi() {
+  spotifyPrevious.hidden = spotifyTrackIndex === 0;
+  spotifyNext.hidden = spotifyTrackIndex === spotifyTracks.length - 1;
+  spotifyTrackStatus.querySelectorAll("span").forEach((dot, index) => dot.classList.toggle("active", index === spotifyTrackIndex));
+  spotifyTrackStatus.querySelector("b").textContent = spotifyTracks[spotifyTrackIndex].name;
+  spotifyNext.setAttribute("aria-label", `Play ${spotifyTracks[Math.min(spotifyTracks.length - 1, spotifyTrackIndex + 1)].name}`);
+  spotifyPrevious.setAttribute("aria-label", `Play ${spotifyTracks[Math.max(0, spotifyTrackIndex - 1)].name}`);
+}
+
+function loadSpotifyTrack(index, play = true) {
+  if (!spotifyController || index < 0 || index >= spotifyTracks.length || index === spotifyTrackIndex) return;
+  spotifyEmbedShell.classList.add("is-changing");
+
+  window.setTimeout(() => {
+    spotifyTrackIndex = index;
+    spotifyController.loadEntity(spotifyTracks[index].url);
+    updateSpotifyTrackUi();
+    if (play) spotifyController.play();
+    requestAnimationFrame(() => spotifyEmbedShell.classList.remove("is-changing"));
+  }, 170);
+}
+
+function playFirstSpotifyTrack() {
+  spotifyAutoplayPending = true;
+  if (!spotifyController) return;
+
+  if (spotifyTrackIndex !== 0) {
+    spotifyTrackIndex = 0;
+    spotifyController.loadEntity(spotifyTracks[0].url);
+    updateSpotifyTrackUi();
+  }
+  spotifyController.play();
+  spotifyAutoplayPending = false;
+}
+
 spotifyToggle.addEventListener("click", () => {
-  setSpotifyPlayer(spotifyPlayer.hidden);
+  const willOpen = spotifyPlayer.hidden;
+  setSpotifyPlayer(willOpen);
+  if (willOpen) playFirstSpotifyTrack();
 });
+
+spotifyPrevious.addEventListener("click", () => loadSpotifyTrack(spotifyTrackIndex - 1));
+spotifyNext.addEventListener("click", () => loadSpotifyTrack(spotifyTrackIndex + 1));
 
 spotifyClose.addEventListener("click", () => {
   setSpotifyPlayer(false);
@@ -54,6 +118,29 @@ document.addEventListener("keydown", (event) => {
     spotifyToggle.focus();
   }
 });
+
+window.onSpotifyIframeApiReady = (IFrameAPI) => {
+  IFrameAPI.createController(
+    spotifyEmbedHost,
+    { width: "100%", height: 152, url: spotifyTracks[0].url },
+    (controller) => {
+      spotifyController = controller;
+      controller.addListener("ready", () => {
+        if (spotifyAutoplayPending) playFirstSpotifyTrack();
+      });
+      controller.addListener("playback_update", (event) => {
+        setSpotifyPlaying(!event.data.isPaused && !event.data.isBuffering);
+      });
+      if (spotifyAutoplayPending) playFirstSpotifyTrack();
+    }
+  );
+};
+
+const spotifyApiScript = document.createElement("script");
+spotifyApiScript.src = "https://open.spotify.com/embed/iframe-api/v1";
+spotifyApiScript.async = true;
+document.head.append(spotifyApiScript);
+updateSpotifyTrackUi();
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const revealItems = document.querySelectorAll(".reveal");
