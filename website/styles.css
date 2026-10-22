@@ -406,30 +406,37 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   .hero { padding: 8.5rem 0 3.25rem; gap: 1rem; }
   .hero h1 { font-size: clamp(3.05rem, 15vw, 4.8rem); }
   .hero-actions .button { flex: 1 1 10rem; }
-  .hero-visual { min-height: 28rem; }
-  .profile-card { width: min(94%, 28rem); padding: 1.15rem 1.15rem 1.5rem; }
-  .avatar-wrap { width: 10rem; margin-top: 1.7rem; }
-  .avatar-wrap img { width: 10rem; height: 10rem; border-radius: 2.1rem; }
-  .avatar-ring { border-radius: 2.4rem; }
+  .hero-visual { min-height: 25rem; }
+  .profile-card { width: min(94%, 28rem); padding: 1rem 1.05rem 1.2rem; }
+  .profile-card-top { padding-bottom: .8rem; }
+  .avatar-wrap { width: 8.5rem; margin: 1.25rem auto 1.1rem; }
+  .avatar-wrap img { width: 8.5rem; height: 8.5rem; border-radius: 1.85rem; }
+  .avatar-ring { border-radius: 2.1rem; }
+  .code-line { margin: .24rem 0; font-size: .82rem; line-height: 1.45; }
   .orbit-one { width: 25rem; height: 25rem; }
   .orbit-two { width: 18rem; height: 18rem; }
   .tag-one { right: .1rem; }
   .tag-two { left: .1rem; }
-  .section { padding: 3.5rem 0; }
+  .section { padding: 3.15rem 0; }
   .section-heading { margin-bottom: 2.1rem; }
   .section-heading h2 { font-size: clamp(2.55rem, 12vw, 4rem); }
   .stack-grid, .links-grid { grid-template-columns: 1fr; }
   .featured-stack, .social-link.wide { grid-column: auto; }
-  .impact-panel { grid-template-columns: 1fr; }
-  .quote-card { grid-column: auto; }
+  .impact-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+  .impact-card, .quote-card { min-height: 7.75rem; padding: 1rem; }
+  .impact-value { font-size: clamp(1.7rem, 9vw, 2.4rem); }
+  .quote-card { grid-column: 1 / -1; }
   .project-card { border-radius: 1.3rem; }
   .project-copy { padding: 1.6rem 1.25rem; }
   .project-copy h3 { font-size: clamp(2.75rem, 13vw, 3.5rem); }
+  .project-features { margin-top: .9rem; }
+  .project-actions { margin-top: 1.35rem; }
   .project-actions .button { width: 100%; }
   .project-actions .text-link { margin-inline: auto; }
-  .project-art { min-height: 23rem; }
-  .phone { width: 10.75rem; }
-  .app-screen { min-height: 19.5rem; }
+  .project-art { min-height: 20.5rem; }
+  .phone { width: 9.75rem; }
+  .app-screen { min-height: 17.5rem; }
+  .game-orb { width: 5.2rem; height: 5.2rem; margin: 1rem 0 .7rem; font-size: 2.5rem; }
   .learning-strip { grid-template-columns: 1fr; gap: 1rem; }
   .learning-strip > p { margin: 0; }
   .links-grid { gap: .65rem; }
@@ -443,8 +450,8 @@ footer { display: flex; justify-content: space-between; align-items: center; gap
   .hero h1 { font-size: clamp(2.75rem, 14vw, 3.4rem); }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .button { flex-basis: auto; width: 100%; }
-  .hero-visual { min-height: 26rem; }
-  .section { padding: 3rem 0; }
+  .hero-visual { min-height: 24rem; }
+  .section { padding: 2.85rem 0; }
   .floating-tag { display: none; }
 }
 
