@@ -61,7 +61,6 @@ function setSpotifyPlaying(playing) {
 function updateSpotifyTrackUi() {
   spotifyPrevious.hidden = spotifyTrackIndex === 0;
   spotifyNext.hidden = spotifyTrackIndex === spotifyTracks.length - 1;
-  spotifyTrackStatus.querySelectorAll("span").forEach((dot, index) => dot.classList.toggle("active", index === spotifyTrackIndex));
   spotifyTrackStatus.querySelector("b").textContent = spotifyTracks[spotifyTrackIndex].name;
   spotifyNext.setAttribute("aria-label", `Play ${spotifyTracks[Math.min(spotifyTracks.length - 1, spotifyTrackIndex + 1)].name}`);
   spotifyPrevious.setAttribute("aria-label", `Play ${spotifyTracks[Math.max(0, spotifyTrackIndex - 1)].name}`);
