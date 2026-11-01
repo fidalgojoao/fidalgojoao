@@ -1,6 +1,6 @@
 # 👋 Hi, I'm João Fidalgo
 
-Software Developer (in the making) based in Portugal, focused on learning C++ right now.
+Software Developer (in the making), focused on learning C++ right now.
 
 ## 🧠 About Me 
 
