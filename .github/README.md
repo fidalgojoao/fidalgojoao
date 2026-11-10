@@ -56,10 +56,6 @@ An offline party game for sharing stories, revealing secrets, and discovering mo
 
 - C++
 
-## 🤝 Contact
-
-All my Links: https://linktr.ee/joao.fidalgo
-
 <!--
 **JoaoFidalgo/JoaoFidalgo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
