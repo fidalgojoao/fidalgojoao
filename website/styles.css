@@ -198,8 +198,6 @@ footer p { margin: 0; }
 @media (min-width: 901px) {
   .site-header, main, footer { width: min(calc(100% - 4rem), 1680px); }
   .eyebrow { margin-left: 2rem; }
-  .overview-grid { grid-auto-rows: 21.5rem; }
-  .overview-card { min-height: 0; height: 100%; }
 }
 
 @media (max-width: 1100px) {
@@ -279,10 +277,13 @@ footer p { margin: 0; }
 .project-tabs button[aria-selected="true"] { background: color-mix(in srgb, var(--purple) 24%, var(--surface)); color: var(--text); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--purple) 34%, transparent); }
 .project-arrow { display: grid; width: 1.75rem; height: 1.75rem; padding: 0; place-items: center; border: 1px solid var(--line); border-radius: .62rem; background: color-mix(in srgb, var(--surface-strong) 76%, transparent); color: var(--text); cursor: pointer; font-size: .95rem; transition: transform 180ms ease, border-color 180ms ease; }
 .project-arrow:hover { border-color: var(--purple); color: var(--purple); transform: translateY(-1px); }
-.project-panel { display: grid; grid-template-columns: 4.8rem minmax(0,1fr); gap: .72rem; min-height: 7.25rem; padding: .65rem; border: 1px solid var(--line); border-radius: .9rem; background: color-mix(in srgb, var(--surface-strong) 68%, transparent); }
+.project-panel { display: grid; grid-template-columns: 4.8rem minmax(0,1fr); gap: .72rem; min-height: 5.4rem; padding: .65rem; border: 1px solid var(--line); border-radius: .9rem; background: color-mix(in srgb, var(--surface-strong) 68%, transparent); }
 .project-panel[hidden] { display: none !important; }
-.project-panel--list { display: block; }
-.project-feature-image { width: 4.8rem; height: 7.25rem; border: 1px solid rgba(255,255,255,.16); border-radius: .78rem; object-fit: cover; object-position: center top; }
+.project-panel--list { display: block; min-height: 0; padding: .45rem; }
+.project-panel--list .project-strips { gap: .35rem; }
+.project-panel--list .project-strips > div { min-height: 2.7rem; padding: .4rem .48rem; }
+.project-panel--list .project-mark { width: 2.3rem; height: 2.3rem; }
+.project-feature-image { width: 4.8rem; height: 4.8rem; border: 1px solid rgba(255,255,255,.16); border-radius: .78rem; object-fit: cover; object-position: center top; }
 .project-panel__label { display: block; margin-bottom: .25rem; color: var(--purple); font: 700 .5rem ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
 .project-panel h4 { margin: 0 0 .34rem; font-size: .91rem; line-height: 1.08; letter-spacing: -.025em; }
 .project-panel p { margin: 0; color: var(--muted); font-size: .61rem; line-height: 1.42; }
