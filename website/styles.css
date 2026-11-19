@@ -198,6 +198,8 @@ footer p { margin: 0; }
 @media (min-width: 901px) {
   .site-header, main, footer { width: min(calc(100% - 4rem), 1680px); }
   .eyebrow { margin-left: 2rem; }
+  .overview-grid { grid-auto-rows: 21.5rem; }
+  .overview-card { min-height: 0; height: 100%; }
 }
 
 @media (max-width: 1100px) {
@@ -278,6 +280,7 @@ footer p { margin: 0; }
 .project-arrow { display: grid; width: 1.75rem; height: 1.75rem; padding: 0; place-items: center; border: 1px solid var(--line); border-radius: .62rem; background: color-mix(in srgb, var(--surface-strong) 76%, transparent); color: var(--text); cursor: pointer; font-size: .95rem; transition: transform 180ms ease, border-color 180ms ease; }
 .project-arrow:hover { border-color: var(--purple); color: var(--purple); transform: translateY(-1px); }
 .project-panel { display: grid; grid-template-columns: 4.8rem minmax(0,1fr); gap: .72rem; min-height: 7.25rem; padding: .65rem; border: 1px solid var(--line); border-radius: .9rem; background: color-mix(in srgb, var(--surface-strong) 68%, transparent); }
+.project-panel[hidden] { display: none !important; }
 .project-panel--list { display: block; }
 .project-feature-image { width: 4.8rem; height: 7.25rem; border: 1px solid rgba(255,255,255,.16); border-radius: .78rem; object-fit: cover; object-position: center top; }
 .project-panel__label { display: block; margin-bottom: .25rem; color: var(--purple); font: 700 .5rem ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
