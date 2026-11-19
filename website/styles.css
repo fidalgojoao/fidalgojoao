@@ -198,6 +198,8 @@ footer p { margin: 0; }
 @media (min-width: 901px) {
   .site-header, main, footer { width: min(calc(100% - 4rem), 1680px); }
   .eyebrow { margin-left: 2rem; }
+  .overview-grid { grid-auto-rows: 28rem; }
+  .overview-card { min-height: 0; height: 100%; }
 }
 
 @media (max-width: 1100px) {
