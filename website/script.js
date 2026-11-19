@@ -177,3 +177,22 @@ if (overviewGrid && swipeCue) {
   window.addEventListener("load", updateSwipeCue);
   requestAnimationFrame(updateSwipeCue);
 }
+
+const projectBrowser = document.querySelector(".project-browser");
+
+if (projectBrowser) {
+  const projectOrder = ["featured", "november", "october"];
+  const projectTabs = [...projectBrowser.querySelectorAll("[data-project-tab]")];
+  const projectPanels = [...projectBrowser.querySelectorAll("[data-project-panel]")];
+  const showProject = (name) => {
+    projectTabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.projectTab === name)));
+    projectPanels.forEach((panel) => { panel.hidden = panel.dataset.projectPanel !== name; });
+  };
+  const cycleProject = (direction) => {
+    const activeIndex = projectOrder.indexOf(projectTabs.find((tab) => tab.getAttribute("aria-selected") === "true").dataset.projectTab);
+    showProject(projectOrder[(activeIndex + direction + projectOrder.length) % projectOrder.length]);
+  };
+  projectTabs.forEach((tab) => tab.addEventListener("click", () => showProject(tab.dataset.projectTab)));
+  projectBrowser.querySelector("[data-project-previous]").addEventListener("click", () => cycleProject(-1));
+  projectBrowser.querySelector("[data-project-next]").addEventListener("click", () => cycleProject(1));
+}

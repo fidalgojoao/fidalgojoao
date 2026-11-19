@@ -104,23 +104,34 @@
           </article>
 
           <article class="overview-card overview-projects" id="projects">
-            <div class="overview-card-head"><span>03 / PROJECTS</span><b>Games · C++</b></div>
+            <div class="overview-card-head"><span>03 / PROJECTS</span><b>2026 archive</b></div>
             <h3>Small releases.<br /><span>Bigger experiments.</span></h3>
-            <section class="featured-project" aria-labelledby="uncharted-project-title">
-              <img src="assets/uncharted-multiplayer.png" alt="Nathan Drake silhouette in aged gold parchment" />
-              <div class="featured-project__copy">
-                <p class="featured-project__eyebrow">Featured project</p>
-                <h4 id="uncharted-project-title">Uncharted: The Nathan Drake Collection</h4>
-                <p>An unofficial PC-port experiment and launcher project. I am building a clearer path into the multiplayer setup: own-game import steps, RPCS3 game-data guidance, and a dedicated web tutorial.</p>
-                <div class="featured-project__links"><a href="https://github.com/fidalgojoao/Uncharted-The-Nathan-Drake-Collection-PC-port" target="_blank" rel="noreferrer">View project ↗</a><a href="https://fidalgojoao.github.io/Uncharted-The-Nathan-Drake-Collection-PC-port/" target="_blank" rel="noreferrer">Read tutorial ↗</a></div>
+            <section class="project-browser" aria-label="Project archive">
+              <div class="project-browser__bar">
+                <button class="project-arrow" type="button" data-project-previous aria-label="Show previous project group">←</button>
+                <div class="project-tabs" role="tablist" aria-label="Project groups">
+                  <button id="project-tab-featured" type="button" role="tab" aria-selected="true" aria-controls="project-panel-featured" data-project-tab="featured">Featured</button>
+                  <button id="project-tab-november" type="button" role="tab" aria-selected="false" aria-controls="project-panel-november" data-project-tab="november">Nov ’26</button>
+                  <button id="project-tab-october" type="button" role="tab" aria-selected="false" aria-controls="project-panel-october" data-project-tab="october">Oct ’26</button>
+                </div>
+                <button class="project-arrow" type="button" data-project-next aria-label="Show next project group">→</button>
               </div>
+
+              <article class="project-panel" id="project-panel-featured" role="tabpanel" aria-labelledby="project-tab-featured" data-project-panel="featured">
+                <img class="project-feature-image" src="assets/uncharted-multiplayer.png" alt="Nathan Drake silhouette in aged gold parchment" />
+                <div><span class="project-panel__label">Featured · November 2026</span><h4>Uncharted: The Nathan Drake Collection</h4><p>An unofficial PC-port experiment with a launcher-led multiplayer import guide.</p><div class="project-panel__links"><a href="https://github.com/fidalgojoao/Uncharted-The-Nathan-Drake-Collection-PC-port" target="_blank" rel="noreferrer">Project ↗</a><a href="https://fidalgojoao.github.io/Uncharted-The-Nathan-Drake-Collection-PC-port/" target="_blank" rel="noreferrer">Tutorial ↗</a></div></div>
+              </article>
+
+              <article class="project-panel" id="project-panel-november" role="tabpanel" aria-labelledby="project-tab-november" data-project-panel="november" hidden>
+                <img class="project-feature-image" src="assets/uncharted-multiplayer.png" alt="Nathan Drake silhouette in aged gold parchment" />
+                <div><span class="project-panel__label">November 2026</span><h4>Uncharted multiplayer setup</h4><p>A focused web guide for bringing a personal game copy, RPCS3 data, and RPCN sign-in together.</p><div class="project-panel__links"><a href="https://github.com/fidalgojoao/Uncharted-The-Nathan-Drake-Collection-PC-port" target="_blank" rel="noreferrer">Project ↗</a><a href="https://fidalgojoao.github.io/Uncharted-The-Nathan-Drake-Collection-PC-port/" target="_blank" rel="noreferrer">Tutorial ↗</a></div></div>
+              </article>
+
+              <article class="project-panel project-panel--list" id="project-panel-october" role="tabpanel" aria-labelledby="project-tab-october" data-project-panel="october" hidden>
+                <div class="project-strips"><div><img class="project-mark" src="assets/truth-or-dare-icon.png" alt="" /><span><b>Truth or Dare</b><small>Offline party and social prompt game · October 2026</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">Code ↗</a></span></div><div><img class="project-mark" src="assets/never-have-i-ever-icon.png" alt="" /><span><b>Never Have I Ever</b><small>Offline party and social prompt game · October 2026</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.neverhaveiever" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">Code ↗</a></span></div></div>
+              </article>
             </section>
-            <p class="project-subhead">Published Android games</p>
-            <div class="project-strips">
-              <div><img class="project-mark" src="assets/truth-or-dare-icon.png" alt="" /><span><b>Truth or Dare</b><small>Offline party/Social prompt game</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.truthordare" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">Code ↗</a></span></div>
-              <div><img class="project-mark" src="assets/never-have-i-ever-icon.png" alt="" /><span><b>Never Have I Ever</b><small>Offline party/Social prompt game</small></span><span class="strip-links"><a href="https://play.google.com/store/apps/details?id=game.neverhaveiever" target="_blank" rel="noreferrer">Play ↗</a><a href="https://github.com/fidalgojoao" target="_blank" rel="noreferrer">Code ↗</a></span></div>
-            </div>
-            <p class="current-line"><i></i><span>Currently learning</span><strong>C++</strong></p>
+            <p class="current-line"><i></i><span>Currently building</span><strong>Multiplayer guide</strong></p>
           </article>
 
           <article class="overview-card overview-links" id="links">
